@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/eugurith/catkin_ws/devel/setup.sh
