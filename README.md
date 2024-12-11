@@ -11,3 +11,5 @@ The exact contents are as follows:
   - The "src" folder, containing ROS files which use libraries such as MoveIt Motion Planning Framework to coordinate the manipulator's movements;
     
   - The "arduino_scripts" folder, which contains our early-stage attempts at robohand movements and now mostly used only as a reference.
+
+For further details, please refer to the project report: https://www.overleaf.com/read/xgnspjnydprb#3b3b8f
