@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This does not replace URDF, and is not an extension of URDF.
+    This is a format for representing semantic information about the robot structure.
+    A URDF file must exist for this robot as well, where the joints and the links that are referenced are defined
+-->
+<robot name="robot_arm_urdf">
+    <!--GROUPS: Representation of a set of joints and links. This can be useful for specifying DOF to plan for, defining arms, end effectors, etc-->
+    <!--LINKS: When a link is specified, the parent joint of that link (if it exists) is automatically included-->
+    <!--JOINTS: When a joint is specified, the child link of that joint (which will always exist) is automatically included-->
+    <!--CHAINS: When a chain is specified, all the links along the chain (including endpoints) are included in the group. Additionally, all the joints that are parents to included links are also included. This means that joints along the chain and the parent joint of the base link are included in the group-->
+    <!--SUBGROUPS: Groups can also be formed by referencing to already defined group names-->
+    <group name="main_arm">
+        <joint name="joint_1"/>
+        <joint name="joint_2"/>
+        <joint name="joint_3"/>
+        <joint name="joint_4"/>
+    </group>
+    <group name="instrument_changer">
+        <joint name="joint_5"/>
+    </group>
+    <!--GROUP STATES: Purpose: Define a named state for a particular group, in terms of joint values. This is useful to define states like 'folded arms'-->
+    <group_state name="default_pose" group="main_arm">
+        <joint name="joint_1" value="-0.94"/>
+        <joint name="joint_2" value="-0.7643"/>
+        <joint name="joint_3" value="-0.237"/>
+        <joint name="joint_4" value="-1.5639"/>
+    </group_state>
+    <group_state name="default_instrument" group="instrument_changer">
+        <joint name="joint_5" value="-1.508"/>
+    </group_state>
+    <group_state name="pick_screw1" group="main_arm">
+        <joint name="joint_1" value="-1.31"/>
+        <joint name="joint_2" value="-0.98"/>
+        <joint name="joint_3" value="-0.29"/>
+        <joint name="joint_4" value="-1.65"/>
+    </group_state>
+    <group_state name="go_up1" group="main_arm">
+        <joint name="joint_1" value="-1.25"/>
+        <joint name="joint_2" value="-1"/>
+        <joint name="joint_3" value="-0.5"/>
+        <joint name="joint_4" value="-1.45"/>
+    </group_state>
+    <group_state name="preparing_to_put1" group="main_arm">
+        <joint name="joint_1" value="-0.78"/>
+        <joint name="joint_2" value="-0.84"/>
+        <joint name="joint_3" value="-0.38"/>
+        <joint name="joint_4" value="-1.45"/>
+    </group_state>
+    <group_state name="put_screw1" group="main_arm">
+        <joint name="joint_1" value="-0.7"/>
+        <joint name="joint_2" value="-0.86"/>
+        <joint name="joint_3" value="-0.08"/>
+        <joint name="joint_4" value="-1.71"/>
+    </group_state>
+    <group_state name="pick_screw2" group="main_arm">
+        <joint name="joint_1" value="-1.33"/>
+        <joint name="joint_2" value="-0.92"/>
+        <joint name="joint_3" value="-0.2"/>
+        <joint name="joint_4" value="-1.6525"/>
+    </group_state>
+    <group_state name="go_up2" group="main_arm">
+        <joint name="joint_1" value="-1.29"/>
+        <joint name="joint_2" value="-0.92"/>
+        <joint name="joint_3" value="-0.43"/>
+        <joint name="joint_4" value="-1.46"/>
+    </group_state>
+    <group_state name="preparing_to_put2" group="main_arm">
+        <joint name="joint_1" value="-0.92"/>
+        <joint name="joint_2" value="-0.84"/>
+        <joint name="joint_3" value="-0.38"/>
+        <joint name="joint_4" value="-1.44"/>
+    </group_state>
+    <group_state name="pick_screw3" group="main_arm">
+        <joint name="joint_1" value="-1.21"/>
+        <joint name="joint_2" value="-0.86"/>
+        <joint name="joint_3" value="-0.1"/>
+        <joint name="joint_4" value="-1.6426"/>
+    </group_state>
+    <group_state name="go_up3" group="main_arm">
+        <joint name="joint_1" value="-1.33"/>
+        <joint name="joint_2" value="-0.9"/>
+        <joint name="joint_3" value="-0.34"/>
+        <joint name="joint_4" value="-1.51"/>
+    </group_state>
+    <group_state name="put_screw3" group="main_arm">
+        <joint name="joint_1" value="-0.88"/>
+        <joint name="joint_2" value="-0.72"/>
+        <joint name="joint_3" value="0.05"/>
+        <joint name="joint_4" value="-1.7"/>
+    </group_state>
+    <group_state name="preparing_to_put3" group="main_arm">
+        <joint name="joint_1" value="-0.92"/>
+        <joint name="joint_2" value="-0.72"/>
+        <joint name="joint_3" value="-0.22"/>
+        <joint name="joint_4" value="-1.44"/>
+    </group_state>
+    <group_state name="pick_screw4" group="main_arm">
+        <joint name="joint_1" value="-1.37"/>
+        <joint name="joint_2" value="-0.84"/>
+        <joint name="joint_3" value="-0.1"/>
+        <joint name="joint_4" value="-1.67"/>
+    </group_state>
+    <group_state name="go_up4" group="main_arm">
+        <joint name="joint_1" value="-1.37"/>
+        <joint name="joint_2" value="-0.82"/>
+        <joint name="joint_3" value="-0.29"/>
+        <joint name="joint_4" value="-1.51"/>
+    </group_state>
+    <group_state name="preparing_to_put4" group="main_arm">
+        <joint name="joint_1" value="-0.7"/>
+        <joint name="joint_2" value="-0.74"/>
+        <joint name="joint_3" value="-0.22"/>
+        <joint name="joint_4" value="-1.46"/>
+    </group_state>
+    <group_state name="put_screw4" group="main_arm">
+        <joint name="joint_1" value="-0.72"/>
+        <joint name="joint_2" value="-0.72"/>
+        <joint name="joint_3" value="0.05"/>
+        <joint name="joint_4" value="-1.72"/>
+    </group_state>
+    <group_state name="soldering_tool" group="instrument_changer">
+        <joint name="joint_5" value="-0.09"/>
+    </group_state>
+    <group_state name="spring_tool" group="instrument_changer">
+        <joint name="joint_5" value="1.57"/>
+    </group_state>
+    <group_state name="put_screw2" group="main_arm">
+        <joint name="joint_1" value="-0.92"/>
+        <joint name="joint_2" value="-0.86"/>
+        <joint name="joint_3" value="-0.1"/>
+        <joint name="joint_4" value="-1.67"/>
+    </group_state>
+    <group_state name="prepare_for_solder" group="main_arm">
+        <joint name="joint_1" value="-0.82"/>
+        <joint name="joint_2" value="-0.62"/>
+        <joint name="joint_3" value="-0.13"/>
+        <joint name="joint_4" value="-1.6"/>
+    </group_state>
+    <group_state name="put_solder" group="main_arm">
+        <joint name="joint_1" value="-0.86"/>
+        <joint name="joint_2" value="-0.8"/>
+        <joint name="joint_3" value="-0.1"/>
+        <joint name="joint_4" value="-1.6"/>
+    </group_state>
+    <group_state name="put_paste" group="main_arm">
+        <joint name="joint_1" value="-0.6"/>
+        <joint name="joint_2" value="-0.86"/>
+        <joint name="joint_3" value="0.01"/>
+        <joint name="joint_4" value="-1.61"/>
+    </group_state>
+    <group_state name="preparing_for_paste" group="main_arm">
+        <joint name="joint_1" value="-0.6"/>
+        <joint name="joint_2" value="-0.64"/>
+        <joint name="joint_3" value="0.01"/>
+        <joint name="joint_4" value="-1.61"/>
+    </group_state>
+    <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
+    <disable_collisions link1="base_link" link2="link_1" reason="Adjacent"/>
+    <disable_collisions link1="base_link" link2="link_2" reason="Never"/>
+    <disable_collisions link1="link_1" link2="link_2" reason="Adjacent"/>
+    <disable_collisions link1="link_2" link2="link_3" reason="Adjacent"/>
+    <disable_collisions link1="link_3" link2="link_4" reason="Adjacent"/>
+    <disable_collisions link1="link_3" link2="link_5" reason="Never"/>
+    <disable_collisions link1="link_4" link2="link_5" reason="Adjacent"/>
+</robot>
